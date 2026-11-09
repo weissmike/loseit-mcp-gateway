@@ -1,0 +1,16 @@
+{
+  "name": "loseit-mcp-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "check": "tsc --noEmit" },
+  "dependencies": {
+    "@cloudflare/workers-oauth-provider": "^1.2.4",
+    "hono": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260911.1",
+    "typescript": "^5.0.0",
+    "wrangler": "^4.0.0"
+  }
+}

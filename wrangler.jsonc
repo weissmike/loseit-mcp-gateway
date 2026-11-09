@@ -1,0 +1,15 @@
+{
+  "name": "loseit-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-12",
+  "observability": { "enabled": true },
+  // Create with: npx wrangler kv namespace create LOSEIT_OAUTH_KV   (paste the id below)
+  "kv_namespaces": [{ "binding": "OAUTH_KV", "id": "<your-oauth-kv-id>" }],
+  "define": {
+    // This Worker's public origin (matches the route below)
+    "__ORIGIN__": "\"https://loseit.example.com\"",
+    // The droplet/origin running loseit-mcp behind nginx (see deploy/loseit-droplet)
+    "__UPSTREAM__": "\"https://loseit-origin.example.com\""
+  },
+  "routes": [{ "pattern": "loseit.example.com", "custom_domain": true }]
+}
