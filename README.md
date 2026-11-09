@@ -55,6 +55,25 @@ You need a Cloudflare account with a domain, and a small Linux server with nginx
 Anyone with the owner token can read and change your food log and weight. The shared secret and owner token are
 separate on purpose; rotate either with `wrangler secret put` (and re-run the nginx patch for the origin secret).
 
+## Built on
+
+This project stands on other people's work. Please star and credit them:
+
+**Projects it depends on or learned from**
+
+- [mxbrunet/loseit-mcp](https://github.com/mxbrunet/loseit-mcp), a fork of [cabird/loseit-mcp](https://github.com/cabird/loseit-mcp) by Christian Bird (0BSD): the Lose It MCP server this gateway fronts. It is installed from upstream at a pinned commit, not copied here.
+- [phitoduck/lose-it](https://github.com/phitoduck/lose-it): the Python SDK for Lose It's private web protocol that the server uses.
+- Other community Lose It MCP servers worth knowing: [atfinke/loseit-mcp](https://glama.ai/mcp/servers/atfinke/loseit-mcp) (read-only) and [alex-peck/loseit-mcp](https://github.com/alex-peck/loseit-mcp).
+
+**Libraries**
+
+- [`@cloudflare/workers-oauth-provider`](https://github.com/cloudflare/workers-oauth-provider): the OAuth 2.1 server (authorization, dynamic client registration, PKCE, tokens) that makes this usable as a claude.ai connector.
+- [`@modelcontextprotocol/sdk`](https://github.com/modelcontextprotocol/typescript-sdk): the MCP TypeScript SDK.
+- [Hono](https://hono.dev): the web framework used for routing.
+- [Cloudflare Workers](https://developers.cloudflare.com/workers/) and [Wrangler](https://developers.cloudflare.com/workers/wrangler/): the runtime and deploy tooling.
+
+Full license details are in [NOTICE.md](NOTICE.md).
+
 ## License
 
 MIT, see [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md).
